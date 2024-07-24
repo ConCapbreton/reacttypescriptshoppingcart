@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+Dave Gray youtube tutorial (link below) for React Typescript completed 23/07/2024
+reactquery as an alternative to useEffect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive React TypeScript project that includes almost all lessons included in the tutorial:
+- Multiple components
+- Context API (createContext) for passing props
+- useReducer for handling multiple state properties at once (for both the products page and the cart: id, name, price and quantity)
+- React hooks such as useEffect, useState and useMemo
+- custom hook (useCart and useProducts)
 
-Currently, two official plugins are available:
+A new functionality is included (memo) used in both CartLineItem and Product components to "memoize" unchanged items and only re-render the changes made by the user. This increases the app's efficiency but is not neccesary for functionality. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+There is also new, interesting code relating to bringing in images and displaying currency values - see CartLineItem and Product components.
 
-## Expanding the ESLint configuration
+There is a notable exception from this project: BrowserRouter:
+The "multiple page" aspect of the app is control with a ternary statement in the App component that displays either the product list or the shopping cart depending on the state controlled by the button in the Header/Nav component.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+link: https://www.youtube.com/watch?v=RVFAyFWO4go
